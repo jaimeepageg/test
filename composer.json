@@ -1,0 +1,43 @@
+{
+    "name": "thrive/ceremonies",
+    "type": "wp-plugin",
+    "authors": [
+        {
+            "name": "Charlie Underhill",
+            "email": "c.underhill@wethrive.agency"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ceremonies\\": "app/"
+        }
+    },
+    "require": {
+        "illuminate/database": "^8.83",
+        "php-di/php-di": "^6.4",
+        "guzzlehttp/guzzle": "^7.5",
+        "phpmailer/phpmailer": "^6.7",
+        "firebase/php-jwt": "^6.8",
+        "robmorgan/phinx": "^0.13.4",
+        "league/flysystem": "^3.0",
+        "mpdf/mpdf": "^8.1",
+        "illuminate/pagination": "*",
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "config": {
+        "platform": {
+            "php": "8.0.2"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "symfony/var-dumper": "^6.0"
+    },
+    "scripts": {
+        "migrate": "vendor/bin/phinx migrate",
+        "refresh": "vendor/bin/phinx rollback -t 0 && vendor/bin/phinx migrate",
+        "seed": "vendor/bin/phinx seed:run",
+        "rollback": "vendor/bin/phinx rollback",
+        "build": "php build.php"
+    }
+}
